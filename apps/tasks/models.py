@@ -64,6 +64,10 @@ class Task(models.Model):
         max_length=2,
         choices= STATUS_CHOICES
     )
+    ower = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE
+    )
 
     class Meta:
         verbose_name = 'Tarefa'
