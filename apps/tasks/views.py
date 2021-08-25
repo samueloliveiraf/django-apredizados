@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib import messages
 from .forms import *
 
 
@@ -12,7 +13,8 @@ def add_category(request):
             f = form.save(commit=False)
             f.ower = request.user
             f.save()
-    
+            messages.success(request, 'Adicionado com sucesso!')
+
     form = CategoryForm()
     context['form'] = form
     

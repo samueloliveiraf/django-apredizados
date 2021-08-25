@@ -1,3 +1,4 @@
+from django.contrib.messages import constants as messages
 from pathlib import Path
 from decouple import config
 import os
@@ -32,6 +33,7 @@ PROJECT_APPS = [
     'core.apps.CoreConfig',
     'tasks.apps.TasksConfig',
     'accounts.apps.AccountsConfig',
+    'bootstrapform',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_APPS
@@ -105,6 +107,11 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+MESSAGE_TAGS = {
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+}
 
 
 STATIC_URL = '/static/'
