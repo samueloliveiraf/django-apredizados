@@ -18,24 +18,25 @@ Adicionar categoria - {{ block.super }}
                         <th scope="col">#</th>
                         <th scope="col">Categoria</th>
                         <th scope="col">Descrição</th>
-                        <th class="action" scope="col">Ações</th>
+                        <th scope="col">Data final</th>
+                        <th scope="col">Ações</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
-                {% for category in categories %}
+                {% for task in tasks %}
                 <tbody>
                     <tr>
-                        <th scope="row">{{ category.id }}</th>
-                        <td>{{ category.name }}</td>
-                        <td>{{ category.descripition }}</td>
+                        <th scope="row">{{ task.id }}</th>
+                        <td>{{ task.name }}</td>
+                        <td>{{ task.descripition }}</td>
+                        <td>{{ task.end_date }}</td>
                         <td>
-                            <a href="{% url 'tasks:edit_category' category.id %}" class="btn btn-primary btn-sm">
+                            <a href="{% url 'tasks:edit_tasks' task.id %}" class="btn btn-primary btn-sm">
                                 Editar
                             </a>
-                            
                         </td>
-                        <td class="td-excluir">
-                            {% include 'partions/confime_delete_category.html' %}
+                        <td>
+                            {% include 'partions/confime_delete_tasks.html' %}
                         </td>
                     </tr>
                 </tbody>

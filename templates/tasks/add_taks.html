@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load bootstrap %}
+
+{% block title %}
+    Adicionar tarefa - {{ block.super }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Adicionar Tarefas</h1>
+
+        {% include 'partions/messages.html' %}
+
+        <div class="row">
+            <div class="col-md-12">
+                <form action="." method="POST" class="form-category"> {% csrf_token %}
+
+                    {{ form|bootstrap }}
+
+                    <button class="btn btn-dark btn-category" type="submit">
+                        Salvar
+                    </button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

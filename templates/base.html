@@ -38,10 +38,10 @@
                             Menu
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{% url 'category:add_category' %}">Adicionar categorias</a></li>
-                            <li><a class="dropdown-item" href="{% url 'category:list_categories' %}">Listar categoria</a></li>
-                            <li><a class="dropdown-item" href="#">Adicionar tarefa</a></li>
-                            <li><a class="dropdown-item" href="#">Listar tarefas</a></li>
+                            <li><a class="dropdown-item" href="{% url 'tasks:add_category' %}">Adicionar categorias</a></li>
+                            <li><a class="dropdown-item" href="{% url 'tasks:list_categories' %}">Listar categoria</a></li>
+                            <li><a class="dropdown-item" href="{% url 'tasks:add_tasks' %}">Adicionar tarefa</a></li>
+                            <li><a class="dropdown-item" href="{% url 'tasks:list_tasks' %}">Listar tarefas</a></li>
                         </ul>
                     </li>
                 </ul>

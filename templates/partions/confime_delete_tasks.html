@@ -1,6 +1,8 @@
 <div class="text-center">
-    
-        <a href="#myModal" class="btn btn-danger btn-sm" data-toggle="modal">Excluir</a>
+    <a href="#myModal" 
+        class="btn btn-danger btn-sm" 
+        data-toggle="modal">
+        Excluir
     </a>
 </div>
 
@@ -28,7 +30,7 @@
             </div>
             <div class="modal-footer justify-content-center">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <a href="{% url 'category:delete_category' category.id %}">
+                <a href="{% url 'tasks:delete_tasks' task.id %}">
                     <button href="" type="button" class="btn btn-danger" id="confirmDeleteModal">Deletar</button>
                 </a>
             </div>

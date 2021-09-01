@@ -6,12 +6,12 @@ urlpatterns = [
     path('admin/', 
         admin.site.urls
     ),
-    path('categoria/',
+    path('tarefas/',
         include('tasks.urls', 
-        namespace='category',
+        namespace='tasks',
     )),
     path('',
         include('core.urls', 
         namespace='core',
-    ))
+    )),
 ]
