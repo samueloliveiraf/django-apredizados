@@ -9,4 +9,8 @@ urlpatterns = [
         add_category,
         name='add_category'
     ),
+    path('',
+        list_category,
+        name='list_categories'
+    ),
 ]

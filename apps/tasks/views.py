@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib import messages
 from .forms import *
+from .models import *
 
 
 def add_category(request):
@@ -18,5 +19,16 @@ def add_category(request):
     form = CategoryForm()
     context['form'] = form
     
+    return render(request, template_name, context)
+
+
+def list_category(request):
+    template_name = 'tasks/list_categories.html'
+    categories = Category.objects.filter(ower=request.user)
+    
+    context = {
+        'categories': categories
+    }
+
     return render(request, template_name, context)
 
