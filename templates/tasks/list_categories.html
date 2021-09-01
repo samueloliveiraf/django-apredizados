@@ -27,7 +27,14 @@ Adicionar categoria - {{ block.super }}
                             <th scope="row">{{ category.id }}</th>
                             <td>{{ category.name }}</td>
                             <td>{{ category.descripition }}</td>
-                            <td>TODO APP</td>
+                            <td>
+                                <a href="{% url 'category:edit_category' category.id %}" class="btn btn-primary btn-sm">
+                                    Editar
+                                </a>
+                                <a href="" class="btn btn-danger btn-sm">
+                                    Excluir
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 {% endfor %}
