@@ -12,31 +12,33 @@ Adicionar categoria - {{ block.super }}
         <div class="col-md-12">
 
             <table class="table table-hover">
-                
+
                 <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Categoria</th>
                         <th scope="col">Descrição</th>
-                        <th scope="col">Ações</th>
+                        <th class="action" scope="col">Ações</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 {% for category in categories %}
-                    <tbody>
-                        <tr>
-                            <th scope="row">{{ category.id }}</th>
-                            <td>{{ category.name }}</td>
-                            <td>{{ category.descripition }}</td>
-                            <td>
-                                <a href="{% url 'category:edit_category' category.id %}" class="btn btn-primary btn-sm">
-                                    Editar
-                                </a>
-                                <a href="" class="btn btn-danger btn-sm">
-                                    Excluir
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{ category.id }}</th>
+                        <td>{{ category.name }}</td>
+                        <td>{{ category.descripition }}</td>
+                        <td>
+                            <a href="{% url 'category:edit_category' category.id %}" class="btn btn-primary btn-sm">
+                                Editar
+                            </a>
+                            
+                        </td>
+                        <td class="td-excluir">
+                            {% include 'tasks/confime_delete_modal.html' %}
+                        </td>
+                    </tr>
+                </tbody>
                 {% endfor %}
             </table>
         </div>

@@ -13,6 +13,10 @@ urlpatterns = [
         edit_category,
         name='edit_category'
     ),
+    path('excluir/<int:id_category>/',
+        delete_category,
+        name='delete_category'
+    ),
     path('',
         list_category,
         name='list_categories'
